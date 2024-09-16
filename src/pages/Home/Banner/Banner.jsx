@@ -1,13 +1,21 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import PrimaryBtn from '../../../components/PrimaryBtn/PrimaryBtn';
 
 const Banner = () => {
     return (
         <div>
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            <Swiper 
+            navigation={true} 
+            loop={true}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+            modules={[Autoplay, Navigation]} 
+            className="mySwiper">
                 <SwiperSlide>
                     <div className='min-h-screen bg-home-banner-bg-1 bg-no-repeat bg-cover bg-center text-center'>
                         <div className='w-full h-full bg-black bg-opacity-30'>
