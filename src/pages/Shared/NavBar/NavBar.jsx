@@ -5,7 +5,7 @@ const NavBar = () => {
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><a>Instructors</a></li>
-        <li><a>Classes</a></li>
+        <li><Link to='/courses'>Courses</Link></li>
     </>
     return (
         <div className="bg-base-100 py-5">
