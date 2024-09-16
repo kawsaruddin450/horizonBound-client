@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form"
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
+    const { signUpUser, updateUserProfile } = useContext(AuthContext);
     const {
         register,
         handleSubmit,
@@ -9,10 +13,53 @@ const Register = () => {
     } = useForm()
     const onSubmit = (data) => {
         console.log(data);
+        signUpUser(data.email, data.password)
+            .then(result => {
+                console.log(result.user)
+                updateUserProfile(data.name, data.image)
+                    .then(() => {
+                        const saveUser = {
+                            name: data.name,
+                            email: data.email,
+                            image: data.image,
+                            role: "student",
+                        }
+                        fetch(`http://localhost:5000/users`, {
+                            method: "POST",
+                            headers: {
+                                "content-type": "application/json"
+                            },
+                            body: JSON.stringify(saveUser)
+                        }).then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    Swal.fire({
+                                        title: "Congratulations!",
+                                        text: "User created successfully.",
+                                        icon: "success"
+                                    });
+                                }
+                            })
+                    })
+                    .catch(() => {
+                        Swal.fire({
+                            title: "Oppss!",
+                            text: "Something went wrong, please try again later",
+                            icon: "error"
+                        });
+                    })
+            })
+            .catch(() => {
+                Swal.fire({
+                    title: "Oppss!",
+                    text: "Something went wrong, please try again later",
+                    icon: "error"
+                });
+            })
     }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-base-200 min-h-screen py-12">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Register now!</h1>
@@ -30,7 +77,7 @@ const Register = () => {
                         {/* Photo URL */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Photo Url</span>
+                                <span className="label-text">Image Url</span>
                             </label>
                             <input {...register("image", { required: true })} type="text" placeholder="image url" name='image' className="input input-bordered" />
                             {errors.image && <span className='text-red-600'>This field is required.</span>}
