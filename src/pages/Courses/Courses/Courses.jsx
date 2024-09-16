@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
+import CourseTabs from "../CourseTabs/CourseTabs";
 
 
 const Courses = () => {
@@ -8,9 +9,9 @@ const Courses = () => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/courses')
-        .then(res => res.json())
-        .then(data => setCourses(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setCourses(data))
+    }, [])
 
     const hiking = courses.filter(item => item.category === 'hiking');
     const kayaking = courses.filter(item => item.category === 'kayaking');
@@ -21,9 +22,9 @@ const Courses = () => {
     const natureExploration = courses.filter(item => item.category === 'nature_exploration');
     const survivalSkills = courses.filter(item => item.category === 'survival_skills');
     const rockClimbing = courses.filter(item => item.category === 'rock_climbing');
-    
+
     return (
-        <div>
+        <div className="lg:container mx-auto">
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList>
                     <Tab>All</Tab>
@@ -37,65 +38,45 @@ const Courses = () => {
                     <Tab>Survival Skills</Tab>
                     <Tab>Rock Climbing</Tab>
                 </TabList>
-                {/* index 0 */}
+                {/* index 0: all */}
                 <TabPanel>
-                    <div>
-                        {courses.length}
-                    </div>
+                    <CourseTabs courses={courses}></CourseTabs>
                 </TabPanel>
-                {/* index 1 */}
+                {/* index 1: hiking */}
                 <TabPanel>
-                    <div>
-                        {hiking.length}
-                    </div>
+                    <CourseTabs courses={hiking}></CourseTabs>
                 </TabPanel>
-                {/* index 2 */}
+                {/* index 2: kayaking */}
                 <TabPanel>
-                    <div>
-                        {kayaking.length}
-                    </div>
+                    <CourseTabs courses={kayaking}></CourseTabs>
                 </TabPanel>
-                {/* index 3 */}
+                {/* index 3: orienteering */}
                 <TabPanel>
-                    <div>
-                        {orienteering.length}
-                    </div>
+                    <CourseTabs courses={orienteering}></CourseTabs>
                 </TabPanel>
-                {/* index 4 */}
+                {/* index 4: camping */}
                 <TabPanel>
-                    <div>
-                        {camping.length}
-                    </div>
+                    <CourseTabs courses={camping}></CourseTabs>
                 </TabPanel>
-                {/* index 5 */}
+                {/* index 5: cycling */}
                 <TabPanel>
-                    <div>
-                        {cycling.length}
-                    </div>
+                    <CourseTabs courses={cycling}></CourseTabs>
                 </TabPanel>
-                {/* index 6 */}
+                {/* index 6: water sports */}
                 <TabPanel>
-                    <div>
-                        {waterSports.length}
-                    </div>
+                    <CourseTabs courses={waterSports}></CourseTabs>
                 </TabPanel>
-                {/* index 7 */}
+                {/* index 7: nature exploration */}
                 <TabPanel>
-                    <div>
-                        {natureExploration.length}
-                    </div>
+                    <CourseTabs courses={natureExploration}></CourseTabs>
                 </TabPanel>
-                {/* index 8 */}
+                {/* index 8: survival skills */}
                 <TabPanel>
-                    <div>
-                        {survivalSkills.length}
-                    </div>
+                    <CourseTabs courses={survivalSkills}></CourseTabs>
                 </TabPanel>
-                {/* index 9 */}
+                {/* index 9: rock climbing */}
                 <TabPanel>
-                    <div>
-                        {rockClimbing.length}
-                    </div>
+                    <CourseTabs courses={rockClimbing}></CourseTabs>
                 </TabPanel>
             </Tabs>
         </div>
