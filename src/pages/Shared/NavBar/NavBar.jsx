@@ -8,7 +8,7 @@ const NavBar = () => {
         <li><a>Classes</a></li>
     </>
     return (
-        <div className="bg-base-100">
+        <div className="bg-base-100 py-5">
             <div className="navbar lg:container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
