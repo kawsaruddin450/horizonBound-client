@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "name": "Beginner Hiking and Trail Safety",
+        "category": "Hiking",
+        "price": 150,
+        "description": "Learn the basics of hiking, including trail safety, navigation, and essential gear. Perfect for beginners looking to explore the great outdoors safely.",
+        "available_seats": 20,
+        "image": "hiking_course_image.jpg",
+        "instructor": "Emily Carter"
+    },
+    {
+        "id": 2,
+        "name": "Advanced Kayaking Techniques",
+        "category": "Kayaking",
+        "price": 200,
+        "description": "Master advanced kayaking techniques, including white-water paddling and safety maneuvers. Ideal for those with prior kayaking experience.",
+        "available_seats": 15,
+        "image": "kayaking_advanced_course_image.jpg",
+        "instructor": "James Miller"
+    },
+    {
+        "id": 3,
+        "name": "Orienteering Basics for Adventurers",
+        "category": "Orienteering",
+        "price": 120,
+        "description": "Learn essential orienteering skills, including map reading and compass navigation. A great course for anyone interested in backcountry navigation.",
+        "available_seats": 25,
+        "image": "orienteering_course_image.jpg",
+        "instructor": "Sophia Lee"
+    },
+    {
+        "id": 4,
+        "name": "Introduction to Rock Climbing",
+        "category": "Rock Climbing",
+        "price": 180,
+        "description": "Get started with rock climbing. This course covers climbing techniques, safety measures, and equipment handling.",
+        "available_seats": 10,
+        "image": "rock_climbing_course_image.jpg",
+        "instructor": "Michael Johnson"
+    },
+    {
+        "id": 5,
+        "name": "Nature and Wildlife Photography",
+        "category": "Nature Exploration",
+        "price": 140,
+        "description": "Capture the beauty of nature with this photography course. Learn techniques for shooting wildlife, landscapes, and outdoor scenes.",
+        "available_seats": 12,
+        "image": "nature_photography_course_image.jpg",
+        "instructor": "Isabella Brown"
+    },
+    {
+        "id": 6,
+        "name": "Stand-Up Paddleboarding (SUP) Basics",
+        "category": "Water Sports",
+        "price": 160,
+        "description": "An introduction to stand-up paddleboarding, covering balance, paddling techniques, and water safety.",
+        "available_seats": 18,
+        "image": "sup_course_image.jpg",
+        "instructor": "Daniel Wilson"
+    },
+    {
+        "id": 7,
+        "name": "Campfire Cooking and Wilderness Survival",
+        "category": "Camping",
+        "price": 130,
+        "description": "Learn how to cook delicious meals over a campfire and pick up essential wilderness survival skills.",
+        "available_seats": 22,
+        "image": "campfire_cooking_course_image.jpg",
+        "instructor": "Olivia Davis"
+    },
+    {
+        "id": 8,
+        "name": "Mountain Biking Adventure",
+        "category": "Cycling",
+        "price": 170,
+        "description": "Experience the thrill of mountain biking with this adventure course. Suitable for riders looking to improve their skills on rough terrains.",
+        "available_seats": 14,
+        "image": "mountain_biking_course_image.jpg",
+        "instructor": "Emily Carter"
+    },
+    {
+        "id": 9,
+        "name": "Advanced Wilderness Navigation",
+        "category": "Orienteering",
+        "price": 200,
+        "description": "This advanced course dives deep into navigation techniques for challenging terrains using topographic maps and GPS devices.",
+        "available_seats": 10,
+        "image": "advanced_navigation_course_image.jpg",
+        "instructor": "James Miller"
+    },
+    {
+        "id": 10,
+        "name": "Family-Friendly Nature Hike",
+        "category": "Hiking",
+        "price": 100,
+        "description": "A guided nature hike suitable for families and kids. Learn about local flora and fauna while enjoying an easy trail.",
+        "available_seats": 30,
+        "image": "family_hike_course_image.jpg",
+        "instructor": "Sophia Lee"
+    },
+    {
+        "id": 11,
+        "name": "Ocean Kayaking Expedition",
+        "category": "Kayaking",
+        "price": 250,
+        "description": "Join an ocean kayaking expedition to explore coastal waters. Learn sea kayaking techniques and ocean safety protocols.",
+        "available_seats": 8,
+        "image": "ocean_kayaking_course_image.jpg",
+        "instructor": "Michael Johnson"
+    },
+    {
+        "id": 12,
+        "name": "Outdoor Yoga and Meditation",
+        "category": "Nature Exploration",
+        "price": 110,
+        "description": "Reconnect with nature through outdoor yoga and meditation sessions. Ideal for stress relief and mental wellness.",
+        "available_seats": 20,
+        "image": "outdoor_yoga_course_image.jpg",
+        "instructor": "Isabella Brown"
+    },
+    {
+        "id": 13,
+        "name": "Wilderness First Aid",
+        "category": "Survival Skills",
+        "price": 180,
+        "description": "Learn critical first aid skills for the wilderness. This course covers injury prevention, treatment, and emergency response in remote areas.",
+        "available_seats": 16,
+        "image": "wilderness_first_aid_course_image.jpg",
+        "instructor": "Daniel Wilson"
+    },
+    {
+        "id": 14,
+        "name": "Backpacking Essentials",
+        "category": "Camping",
+        "price": 150,
+        "description": "Discover the essentials of backpacking, including packing, setting up camp, and cooking in the wild. Perfect for beginner backpackers.",
+        "available_seats": 14,
+        "image": "backpacking_essentials_course_image.jpg",
+        "instructor": "Olivia Davis"
+    },
+    {
+        "id": 15,
+        "name": "Intro to Scuba Diving",
+        "category": "Water Sports",
+        "price": 220,
+        "description": "Get an introduction to scuba diving in this beginner-friendly course. Learn the basics of underwater diving and marine exploration.",
+        "available_seats": 10,
+        "image": "scuba_diving_course_image.jpg",
+        "instructor": "Emily Carter"
+    },
+    {
+        "id": 16,
+        "name": "Intermediate Rock Climbing",
+        "category": "Rock Climbing",
+        "price": 210,
+        "description": "Build on your climbing skills with this intermediate course, focusing on advanced techniques and safety protocols for climbing more challenging routes.",
+        "available_seats": 12,
+        "image": "intermediate_rock_climbing_course_image.jpg",
+        "instructor": "James Miller"
+    },
+    {
+        "id": 17,
+        "name": "Forest Survival Skills",
+        "category": "Survival Skills",
+        "price": 190,
+        "description": "Learn essential forest survival skills, including shelter building, fire starting, and finding food and water in the wild.",
+        "available_seats": 18,
+        "image": "forest_survival_skills_course_image.jpg",
+        "instructor": "Sophia Lee"
+    },
+    {
+        "id": 18,
+        "name": "Nature Art and Craft",
+        "category": "Nature Exploration",
+        "price": 90,
+        "description": "Explore your creativity with this nature-themed art and craft course. Learn how to use natural materials to create unique art pieces.",
+        "available_seats": 20,
+        "image": "nature_art_and_craft_course_image.jpg",
+        "instructor": "Isabella Brown"
+    },
+    {
+        "id": 19,
+        "name": "River Rafting Adventure",
+        "category": "Water Sports",
+        "price": 250,
+        "description": "Join a thrilling river rafting adventure. Learn paddling techniques, safety protocols, and enjoy an adrenaline-pumping ride down the rapids.",
+        "available_seats": 10,
+        "image": "river_rafting_adventure_course_image.jpg",
+        "instructor": "Daniel Wilson"
+    },
+    {
+        "id": 20,
+        "name": "Desert Hiking and Survival",
+        "category": "Hiking",
+        "price": 180,
+        "description": "Explore the unique challenges of desert hiking. Learn survival techniques specific to arid environments, including hydration and heat management.",
+        "available_seats": 12,
+        "image": "desert_hiking_survival_course_image.jpg",
+        "instructor": "Olivia Davis"
+    }
+]
