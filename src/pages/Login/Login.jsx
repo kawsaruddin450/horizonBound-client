@@ -1,13 +1,34 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+    const { loginUser } = useContext(AuthContext);
+
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password);
+        loginUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                Swal.fire({
+                    title: "Congratulations!",
+                    text: "Logged in successfully.",
+                    icon: "success"
+                });
+                form.reset();
+            })
+            .catch(() => {
+                Swal.fire({
+                    title: "Oppss!",
+                    text: "An error occured, please try again later.",
+                    icon: "error"
+                });
+            })
     }
     return (
         <div className="hero bg-base-200 min-h-screen py-12">
