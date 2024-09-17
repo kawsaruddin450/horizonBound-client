@@ -1,14 +1,14 @@
-import { FaBookOpen, FaWallet } from "react-icons/fa";
+import { FaBookOpen, FaUsers, FaWallet } from "react-icons/fa";
 import { GiCheckedShield } from "react-icons/gi";
 import { IoMdHome, IoMdPeople } from "react-icons/io";
-import { IoCheckbox } from "react-icons/io5";
+import { IoCheckbox, IoSettingsSharp } from "react-icons/io5";
 import { RiMenu2Line } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../hooks/useAdmin";
 
 
 const Dashboard = () => {
-    const [ admin ] = useAdmin();
+    const [admin] = useAdmin();
     const isAdmin = admin?.admin;
     console.log(isAdmin);
     return (
@@ -26,10 +26,21 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu bg-sky-500 text-base-content font-semibold min-h-full w-60 p-4">
                         {/* Sidebar content here */}
-                        <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> Dashboard Home</NavLink></li>
-                        <li><NavLink to='/dashboard/myselection'><IoCheckbox className="text-xl"></IoCheckbox> My Selections</NavLink></li>
-                        <li><NavLink to='/dashboard/enrolled'><GiCheckedShield className="text-xl"></GiCheckedShield> Enrolled Courses</NavLink></li>
-                        <li><NavLink to='/dashboard/payments'><FaWallet className="text-xl"></FaWallet> Payment History</NavLink></li>
+
+                        {
+                            isAdmin ?
+                                <>
+                                    <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> Admin Home</NavLink></li>
+                                    <li><NavLink to='/dashboard/managecourses'><IoSettingsSharp className="text-xl"></IoSettingsSharp> Manage Courses</NavLink></li>
+                                    <li><NavLink to='/dashboard/enrolled'><FaUsers className="text-xl"></FaUsers> Manage Users</NavLink></li>
+                                </> :
+                                <>
+                                    <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> User Home</NavLink></li>
+                                    <li><NavLink to='/dashboard/myselection'><IoCheckbox className="text-xl"></IoCheckbox> My Selections</NavLink></li>
+                                    <li><NavLink to='/dashboard/enrolled'><GiCheckedShield className="text-xl"></GiCheckedShield> Enrolled Courses</NavLink></li>
+                                    <li><NavLink to='/dashboard/payments'><FaWallet className="text-xl"></FaWallet> Payment History</NavLink></li>
+                                </>
+                        }
 
                         <div className="divider"></div>
 
