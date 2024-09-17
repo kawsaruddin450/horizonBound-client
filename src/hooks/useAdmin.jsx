@@ -7,7 +7,7 @@ const useAdmin = () => {
     const {user, loading} = useContext(AuthContext);
     const token = localStorage.getItem('access-token');
 
-    const {data: admin} = useQuery({
+    const {data: admin, isLoading: isAdminLoading} = useQuery({
         queryKey: ['admin'],
         enabled: !loading,
         queryFn: async () => {
@@ -20,7 +20,7 @@ const useAdmin = () => {
             return data;
         }
     })
-    return [admin]
+    return [admin, isAdminLoading]
 };
 
 export default useAdmin;
