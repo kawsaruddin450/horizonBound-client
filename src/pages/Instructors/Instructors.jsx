@@ -9,7 +9,7 @@ const Instructors = () => {
         .then(data => setInstructors(data))
     },[])
     return (
-        <div className='lg:container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div className='lg:container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 my-12'>
             {
                 instructors.map(instructor => <InstructorCard
                 key={instructor._id}

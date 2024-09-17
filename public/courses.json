@@ -6,7 +6,8 @@
       "description": "Experience the thrill of mountain biking with this adventure course. Suitable for riders looking to improve their skills on rough terrains.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1471439330580-1493ebc92c13?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGN5Y2xpbmd8ZW58MHx8MHx8fDA%3D",
-      "instructor": "Emily Carter"
+      "instructor": "Emily Carter",
+      "instructor_email": "emily.carter@outdoorcamp.com"
     },
     {
       "name": "Intermediate Rock Climbing",
@@ -15,7 +16,8 @@
       "description": "Build on your climbing skills with this intermediate course, focusing on advanced techniques and safety protocols for climbing more challenging routes.",
       "available_seats": 30,
       "image": "https://plus.unsplash.com/premium_photo-1672280940834-63be76eb00dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJvY2slMjBjbGltYmluZ3xlbnwwfHwwfHx8MA%3D%3D",
-      "instructor": "James Miller"
+      "instructor": "James Miller",
+      "instructor_email": "james.miller@outdoorcamp.com"
     },
     {
       "name": "Wilderness First Aid",
@@ -24,7 +26,8 @@
       "description": "Learn critical first aid skills for the wilderness. This course covers injury prevention, treatment, and emergency response in remote areas.",
       "available_seats": 30,
       "image": "https://plus.unsplash.com/premium_photo-1682390303552-a6250c7d93d2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZvcmVzdCUyMGZpcnN0JTIwYWlkfGVufDB8fDB8fHww",
-      "instructor": "Daniel Wilson"
+      "instructor": "Daniel Wilson",
+      "instructor_email": "daniel.wilson@outdoorcamp.com"
     },
     {
       "name": "Ocean Kayaking Expedition",
@@ -33,7 +36,8 @@
       "description": "Join an ocean kayaking expedition to explore coastal waters. Learn sea kayaking techniques and ocean safety protocols.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1709657179878-5c3e732a7832?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8a2F5YWtpbmd8ZW58MHx8MHx8fDA%3D",
-      "instructor": "Michael Johnson"
+      "instructor": "Michael Johnson",
+      "instructor_email": "michael.johnson@outdoorcamp.com"
     },
     {
       "name": "Desert Hiking and Survival",
@@ -42,7 +46,8 @@
       "description": "Explore the unique challenges of desert hiking. Learn survival techniques specific to arid environments, including hydration and heat management.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "instructor": "Olivia Davis"
+      "instructor": "Olivia Davis",
+      "instructor_email": "olivia.davis@outdoorcamp.com"
     },
     {
       "name": "Orienteering Basics for Adventurers",
@@ -51,7 +56,8 @@
       "description": "Learn essential orienteering skills, including map reading and compass navigation. A great course for anyone interested in backcountry navigation.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1558978325-ead63dff09cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG9yaWVudGVlcmluZ3xlbnwwfHwwfHx8MA%3D%3D",
-      "instructor": "Sophia Lee"
+      "instructor": "Sophia Lee",
+      "instructor_email": "sophia.lee@outdoorcamp.com"
     },
     {
       "name": "Beginner Hiking and Trail Safety",
@@ -60,7 +66,8 @@
       "description": "Learn the basics of hiking, including trail safety, navigation, and essential gear. Perfect for beginners looking to explore the great outdoors safely.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "instructor": "Emily Carter"
+      "instructor": "Emily Carter",
+      "instructor_email": "emily.carter@outdoorcamp.com"
     },
     {
       "name": "Backpacking Essentials",
@@ -69,7 +76,8 @@
       "description": "Discover the essentials of backpacking, including packing, setting up camp, and cooking in the wild. Perfect for beginner backpackers.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D",
-      "instructor": "Olivia Davis"
+      "instructor": "Olivia Davis",
+      "instructor_email": "olivia.davis@outdoorcamp.com"
     },
     {
       "name": "Forest Survival Skills",
@@ -78,7 +86,8 @@
       "description": "Learn essential forest survival skills, including shelter building, fire starting, and finding food and water in the wild.",
       "available_seats": 30,
       "image": "https://plus.unsplash.com/premium_photo-1682390303552-a6250c7d93d2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZvcmVzdCUyMGZpcnN0JTIwYWlkfGVufDB8fDB8fHww",
-      "instructor": "Sophia Lee"
+      "instructor": "Sophia Lee",
+      "instructor_email": "sophia.lee@outdoorcamp.com"
     },
     {
       "name": "Outdoor Yoga and Meditation",
@@ -87,7 +96,8 @@
       "description": "Reconnect with nature through outdoor yoga and meditation sessions. Ideal for stress relief and mental wellness.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1592580715317-19adca36288e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b3V0ZG9vciUyMHlvZ2F8ZW58MHx8MHx8fDA%3D",
-      "instructor": "Isabella Brown"
+      "instructor": "Isabella Brown",
+      "instructor_email": "isabella.brown@outdoorcamp.com"
     },
     {
       "name": "Stand-Up Paddleboarding (SUP) Basics",
@@ -96,7 +106,8 @@
       "description": "An introduction to stand-up paddleboarding, covering balance, paddling techniques, and water safety.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1655105493422-ee7284d40354?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fHdhdGVyJTIwc3BvcnRzfGVufDB8fDB8fHww",
-      "instructor": "Daniel Wilson"
+      "instructor": "Daniel Wilson",
+      "instructor_email": "daniel.wilson@outdoorcamp.com"
     },
     {
       "name": "Campfire Cooking and Wilderness Survival",
@@ -105,7 +116,8 @@
       "description": "Learn how to cook delicious meals over a campfire and pick up essential wilderness survival skills.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D",
-      "instructor": "Olivia Davis"
+      "instructor": "Olivia Davis",
+      "instructor_email": "olivia.davis@outdoorcamp.com"
     },
     {
       "name": "Advanced Wilderness Navigation",
@@ -114,7 +126,8 @@
       "description": "This advanced course dives deep into navigation techniques for challenging terrains using topographic maps and GPS devices.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1558978325-ead63dff09cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG9yaWVudGVlcmluZ3xlbnwwfHwwfHx8MA%3D%3D",
-      "instructor": "James Miller"
+      "instructor": "James Miller",
+      "instructor_email": "james.miller@outdoorcamp.com"
     },
     {
       "name": "Nature Art and Craft",
@@ -123,7 +136,8 @@
       "description": "Explore your creativity with this nature-themed art and craft course. Learn how to use natural materials to create unique art pieces.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1592580715317-19adca36288e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b3V0ZG9vciUyMHlvZ2F8ZW58MHx8MHx8fDA%3D",
-      "instructor": "Isabella Brown"
+      "instructor": "Isabella Brown",
+      "instructor_email": "isabella.brown@outdoorcamp.com"
     },
     {
       "name": "Introduction to Rock Climbing",
@@ -132,7 +146,8 @@
       "description": "Get started with rock climbing. This course covers climbing techniques, safety measures, and equipment handling.",
       "available_seats": 30,
       "image": "https://plus.unsplash.com/premium_photo-1672280940834-63be76eb00dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJvY2slMjBjbGltYmluZ3xlbnwwfHwwfHx8MA%3D%3D",
-      "instructor": "Michael Johnson"
+      "instructor": "Michael Johnson",
+      "instructor_email": "michael.johnson@outdoorcamp.com"
     },
     {
       "name": "Nature and Wildlife Photography",
@@ -141,7 +156,8 @@
       "description": "Capture the beauty of nature with this photography course. Learn techniques for shooting wildlife, landscapes, and outdoor scenes.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1592580715317-19adca36288e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b3V0ZG9vciUyMHlvZ2F8ZW58MHx8MHx8fDA%3D",
-      "instructor": "Isabella Brown"
+      "instructor": "Isabella Brown",
+      "instructor_email": "isabella.brown@outdoorcamp.com"
     },
     {
       "name": "Advanced Kayaking Techniques",
@@ -150,7 +166,8 @@
       "description": "Master advanced kayaking techniques, including white-water paddling and safety maneuvers. Ideal for those with prior kayaking experience.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1709657179878-5c3e732a7832?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8a2F5YWtpbmd8ZW58MHx8MHx8fDA%3D",
-      "instructor": "James Miller"
+      "instructor": "James Miller",
+      "instructor_email": "james.miller@outdoorcamp.com"
     },
     {
       "name": "River Rafting Adventure",
@@ -159,7 +176,8 @@
       "description": "Join a thrilling river rafting adventure. Learn paddling techniques, safety protocols, and enjoy an adrenaline-pumping ride down the rapids.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1655105493422-ee7284d40354?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fHdhdGVyJTIwc3BvcnRzfGVufDB8fDB8fHww",
-      "instructor": "Daniel Wilson"
+      "instructor": "Daniel Wilson",
+      "instructor_email": "daniel.wilson@outdoorcamp.com"
     },
     {
       "name": "Intro to Scuba Diving",
@@ -168,7 +186,8 @@
       "description": "Get an introduction to scuba diving in this beginner-friendly course. Learn the basics of underwater diving and marine exploration.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1655105493422-ee7284d40354?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fHdhdGVyJTIwc3BvcnRzfGVufDB8fDB8fHww",
-      "instructor": "Emily Carter"
+      "instructor": "Emily Carter",
+      "instructor_email": "emily.carter@outdoorcamp.com"
     },
     {
       "name": "Family-Friendly Nature Hike",
@@ -177,6 +196,7 @@
       "description": "A guided nature hike suitable for families and kids. Learn about local flora and fauna while enjoying an easy trail.",
       "available_seats": 30,
       "image": "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "instructor": "Sophia Lee"
+      "instructor": "Sophia Lee",
+      "instructor_email": "sophia.lee@outdoorcamp.com"
     }
   ]
