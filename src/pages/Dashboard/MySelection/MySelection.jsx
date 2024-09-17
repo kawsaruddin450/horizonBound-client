@@ -1,10 +1,33 @@
 import { FaRegTrashAlt } from "react-icons/fa";
 import useSelected from "../../../hooks/useSelected";
+import Swal from "sweetalert2";
 
 
 const MySelection = () => {
-    const [selectedCourses,] = useSelected();
+    const [selectedCourses, refetch] = useSelected();
     const total = selectedCourses.reduce((sum, item) => item.price + sum, 0);
+    const token = localStorage.getItem('access-token');
+
+    const handleDelete = (id) => {
+        fetch(`http://localhost:5000/selected/${id}`, {
+            method: "DELETE",
+            headers: {
+                authorization: `bearer ${token}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount === 1) {
+                    Swal.fire({
+                        title: "Congratulations!",
+                        text: "User created successfully.",
+                        icon: "success"
+                    });
+                    refetch();
+                }
+            })
+    }
+
     return (
         <div className="w-full mx-auto my-12">
             <div className="flex items-center justify-evenly text-2xl font-semibold">
@@ -56,7 +79,7 @@ const MySelection = () => {
                                 </td>
                                 <td>${course.price}</td>
                                 <th>
-                                    <button className="btn btn-md text-md bg-red-600 text-white rounded-full"><FaRegTrashAlt></FaRegTrashAlt></button>
+                                    <button onClick={() => handleDelete(course._id)} className="btn btn-md text-md bg-red-600 text-white rounded-full"><FaRegTrashAlt></FaRegTrashAlt></button>
                                 </th>
                             </tr>)
                         }
