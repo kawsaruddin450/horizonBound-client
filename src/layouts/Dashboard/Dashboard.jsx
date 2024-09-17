@@ -4,9 +4,13 @@ import { IoMdHome, IoMdPeople } from "react-icons/io";
 import { IoCheckbox } from "react-icons/io5";
 import { RiMenu2Line } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../../hooks/useAdmin";
 
 
 const Dashboard = () => {
+    const [ admin ] = useAdmin();
+    const isAdmin = admin?.admin;
+    console.log(isAdmin);
     return (
         <div>
             <div className="drawer md:drawer-open">
