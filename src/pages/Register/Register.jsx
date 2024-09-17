@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const { signUpUser, updateUserProfile } = useContext(AuthContext);
@@ -60,6 +61,9 @@ const Register = () => {
 
     return (
         <div className="hero bg-base-200 min-h-screen py-12">
+            <Helmet>
+                <title>Register - Camp HorizonBound</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Register now!</h1>

@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const { loginUser } = useContext(AuthContext);
@@ -38,6 +39,9 @@ const Login = () => {
     }
     return (
         <div className="hero bg-base-200 min-h-screen py-12">
+            <Helmet>
+                <title>Login - Camp HorizonBound</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>

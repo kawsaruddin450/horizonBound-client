@@ -1,6 +1,7 @@
 import { FaRegTrashAlt } from "react-icons/fa";
 import useSelected from "../../../hooks/useSelected";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const MySelection = () => {
@@ -30,6 +31,9 @@ const MySelection = () => {
 
     return (
         <div className="w-full mx-auto my-12">
+            <Helmet>
+                <title>My Selections - Camp HorizonBound</title>
+            </Helmet>
             <div className="flex items-center justify-evenly text-2xl font-semibold">
                 <h2>Selected Courses: {selectedCourses.length}</h2>
                 <h2>Total Price: ${total}</h2>

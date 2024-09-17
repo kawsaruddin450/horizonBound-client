@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
 import CourseTabs from "../CourseTabs/CourseTabs";
+import { Helmet } from "react-helmet-async";
 
 
 const Courses = () => {
@@ -25,6 +26,9 @@ const Courses = () => {
 
     return (
         <div className="lg:container mx-auto">
+            <Helmet>
+                <title>Courses - Camp HorizonBound</title>
+            </Helmet>
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList>
                     <Tab>All</Tab>
