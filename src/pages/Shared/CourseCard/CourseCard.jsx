@@ -6,7 +6,7 @@ import useSelected from '../../../hooks/useSelected';
 
 const CourseCard = ({ course }) => {
     const { user } = useContext(AuthContext);
-    const { _id, name, description, instructor, price, available_seats, image, category } = course;
+    const { _id, name, description, instructor, price, available_seats, image, category, instructor_email } = course;
     const location = useLocation();
     const navigate = useNavigate();
     const [selectedCourses, refetch] = useSelected();
@@ -20,7 +20,7 @@ const CourseCard = ({ course }) => {
     }
 
     const handleSelect = () => {
-        const selectedItem = { courseId: _id, name, instructor, price, available_seats, image, category, email: user?.email };
+        const selectedItem = { courseId: _id, name, instructor, price, available_seats, image, category, email: user?.email, instructor_email };
 
         if (user) {
             fetch(`http://localhost:5000/courses`, {

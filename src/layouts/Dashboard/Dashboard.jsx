@@ -18,14 +18,14 @@ const Dashboard = () => {
                     </label>
                     <Outlet></Outlet>
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side" id="dashboard-sidebar">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu bg-sky-500 text-base-content font-semibold min-h-full w-80 p-4">
+                    <ul className="menu bg-sky-500 text-base-content font-semibold min-h-full w-60 p-4">
                         {/* Sidebar content here */}
-                        <li><a><IoMdHome className="text-xl"></IoMdHome> Dashboard Home</a></li>
-                        <li><a><IoCheckbox className="text-xl"></IoCheckbox> My Selections</a></li>
-                        <li><a><GiCheckedShield className="text-xl"></GiCheckedShield> Enrolled Courses</a></li>
-                        <li><a><FaWallet className="text-xl"></FaWallet> Payment History</a></li>
+                        <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> Dashboard Home</NavLink></li>
+                        <li><NavLink to='/dashboard/myselection'><IoCheckbox className="text-xl"></IoCheckbox> My Selections</NavLink></li>
+                        <li><NavLink to='/dashboard/enrolled'><GiCheckedShield className="text-xl"></GiCheckedShield> Enrolled Courses</NavLink></li>
+                        <li><NavLink to='/dashboard/payments'><FaWallet className="text-xl"></FaWallet> Payment History</NavLink></li>
 
                         <div className="divider"></div>
 
