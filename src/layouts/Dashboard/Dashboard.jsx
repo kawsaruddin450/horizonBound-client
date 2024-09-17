@@ -32,7 +32,7 @@ const Dashboard = () => {
                                 <>
                                     <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> Admin Home</NavLink></li>
                                     <li><NavLink to='/dashboard/managecourses'><IoSettingsSharp className="text-xl"></IoSettingsSharp> Manage Courses</NavLink></li>
-                                    <li><NavLink to='/dashboard/enrolled'><FaUsers className="text-xl"></FaUsers> Manage Users</NavLink></li>
+                                    <li><NavLink to='/dashboard/manageusers'><FaUsers className="text-xl"></FaUsers> Manage Users</NavLink></li>
                                 </> :
                                 <>
                                     <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> User Home</NavLink></li>

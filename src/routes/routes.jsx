@@ -12,6 +12,7 @@ import MySelection from "../pages/Dashboard/MySelection/MySelection";
 import PrivateRoutes from "./PrivateRoutes";
 import ManageCourses from "../pages/Dashboard/ManageCourses/ManageCourses";
 import AdminRoutes from "./AdminRoutes";
+import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
         {
           path: 'managecourses',
           element: <AdminRoutes><ManageCourses></ManageCourses></AdminRoutes>
+        },
+        {
+          path: 'manageusers',
+          element: <AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
         }
       ]
     }
