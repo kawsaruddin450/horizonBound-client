@@ -4,7 +4,7 @@ import app from '../firebase/firebase.config'
 
 export const AuthContext = createContext();
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
     const auth = getAuth(app);
 
     const [user, setUser] = useState(null);
@@ -32,7 +32,26 @@ const AuthProvider = ({children}) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            setLoading(false);
+            if (currentUser) {
+                const user = { email: currentUser.email };
+                fetch(`http://localhost:5000/jwt`, {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        const token = data.token;
+                        localStorage.setItem('access-token', token);
+                        setLoading(false);
+                    })
+            }
+            else {
+                localStorage.removeItem('access-token');
+                setLoading(false);
+            }
         })
         return () => {
             return unsubscribe();

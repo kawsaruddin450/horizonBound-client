@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import PrimaryBtn from '../../../components/PrimaryBtn/PrimaryBtn';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
