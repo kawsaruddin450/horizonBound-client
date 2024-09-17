@@ -45,7 +45,7 @@ const ManageUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <tr
+                            users?.map((user, index) => <tr
                             key={user._id}
                             >
                                 <th>
@@ -54,7 +54,7 @@ const ManageUsers = () => {
                                 <td>
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
-                                            <div className="mask mask-squircle h-12 w-12">
+                                            <div className="rounded-full h-14 w-14">
                                                 <img
                                                     src={user.image}
                                                     alt="User Image" />
