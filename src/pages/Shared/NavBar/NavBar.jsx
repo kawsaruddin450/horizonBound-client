@@ -66,7 +66,9 @@ const NavBar = () => {
                     {
                         user ? <>
                             <button onClick={handleLogOut} className="btn btn-outline btn-secondary mr-5">Log Out</button>
-                            <img src={user.photoURL} className="h-10 w-10 rounded-full border-solid border-2" alt="user profile" />
+                            <Link to='/dashboard/myselection/'>
+                                <img src={user.photoURL} className="h-10 w-10 rounded-full border-solid border-2" alt="user profile" />
+                            </Link>
                         </>
                             : <Link to='/login' className="btn">Login</Link>
                     }
