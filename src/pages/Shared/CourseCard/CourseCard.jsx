@@ -2,13 +2,22 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useSelected from '../../../hooks/useSelected';
 
 const CourseCard = ({ course }) => {
     const { user } = useContext(AuthContext);
     const { _id, name, description, instructor, price, available_seats, image, category } = course;
     const location = useLocation();
     const navigate = useNavigate();
+    const [selectedCourses, refetch] = useSelected();
+    let isSelected = false;
 
+    if(user){
+        const matched = selectedCourses.find(item => item.courseId === course._id);
+        if(matched){
+            isSelected = true;
+        }
+    }
 
     const handleSelect = () => {
         const selectedItem = { courseId: _id, name, instructor, price, available_seats, image, category, email: user?.email };
@@ -29,6 +38,7 @@ const CourseCard = ({ course }) => {
                             text: "This course have been selected successfully.",
                             icon: "success"
                         });
+                        refetch();
                     }
                 })
         }
@@ -62,7 +72,11 @@ const CourseCard = ({ course }) => {
                 <h3 className='text-xl mt-5'>Instructor: <span className='font-bold'>{instructor}</span></h3>
                 <h3 className='text-xl'>Available Seats: {available_seats}</h3>
                 <div className="card-actions justify-start mt-5">
-                    <button onClick={handleSelect} className="btn btn-secondary rounded-3xl">Select Now</button>
+                    {
+                        isSelected 
+                        ? <button onClick={handleSelect} className="btn btn-primary rounded-3xl">Enroll Now</button>
+                        : <button onClick={handleSelect} className="btn btn-secondary rounded-3xl">Select Now</button>
+                    }
                 </div>
             </div>
         </div>
