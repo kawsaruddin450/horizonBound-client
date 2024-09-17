@@ -13,6 +13,7 @@ const Courses = () => {
             .then(data => setCourses(data))
     }, [])
 
+    console.log(selectedCourses);
     const hiking = courses.filter(item => item.category === 'hiking');
     const kayaking = courses.filter(item => item.category === 'kayaking');
     const orienteering = courses.filter(item => item.category === 'orienteering');
