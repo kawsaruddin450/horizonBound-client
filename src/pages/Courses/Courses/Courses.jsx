@@ -1,18 +1,21 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
 import CourseTabs from "../CourseTabs/CourseTabs";
 import { Helmet } from "react-helmet-async";
+import useCourses from "../../../hooks/useCourses";
 
 
 const Courses = () => {
     const [tabIndex, setTabIndex] = useState(0);
-    const [courses, setCourses] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/courses')
-            .then(res => res.json())
-            .then(data => setCourses(data))
-    }, [])
+    const [courses, ] = useCourses();
+    console.log(courses);
+    // const [courses, setCourses] = useState([]);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/courses')
+    //         .then(res => res.json())
+    //         .then(data => setCourses(data))
+    // }, [])
 
     const hiking = courses.filter(item => item.category === 'hiking');
     const kayaking = courses.filter(item => item.category === 'kayaking');

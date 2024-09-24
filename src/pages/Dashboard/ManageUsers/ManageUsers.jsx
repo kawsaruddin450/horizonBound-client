@@ -69,11 +69,7 @@ const ManageUsers = () => {
                     {/* head */}
                     <thead className="bg-blue-500 text-white font-semibold">
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
+                            <th></th>
                             <th>Name</th>
                             <th>Role</th>
                             <th>Change Role</th>
