@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const AddCourse = () => {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
+    const token = localStorage.getItem('access-token');
 
     const handleAddCourse = event => {
         event.preventDefault();
@@ -31,6 +33,33 @@ const AddCourse = () => {
             available_seats: availableSeats,
         }
         console.log(course);
+
+        fetch(`http://localhost:5000/courses`, {
+            method: "POST",
+            headers: {
+                authorization: `bearer ${token}`,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(course)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Congratulations!",
+                        text: "This course have been added successfully.",
+                        icon: "success"
+                    });
+                    form.reset();
+                }
+                else {
+                    Swal.fire({
+                        title: "Sorry!",
+                        text: "Something went wrong, please try again later.",
+                        icon: "error"
+                    });
+                }
+            })
     }
 
     return (
@@ -101,14 +130,14 @@ const AddCourse = () => {
                                 <label className="label">
                                     <span className="label-text">Instructor</span>
                                 </label>
-                                <input type="text" placeholder="Instructor" name="instructor" value={user?.displayName} className="input input-bordered" required readOnly/>
+                                <input type="text" placeholder="Instructor" name="instructor" value={user?.displayName} className="input input-bordered" required readOnly />
                             </div>
                             {/* Instructor Email */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Instructor Email</span>
                                 </label>
-                                <input type="email" placeholder="Instructor email" name="email" value={user?.email} className="input input-bordered" required readOnly/>
+                                <input type="email" placeholder="Instructor email" name="email" value={user?.email} className="input input-bordered" required readOnly />
                             </div>
                             {/* Submit Button */}
                             <div className="form-control mt-6">

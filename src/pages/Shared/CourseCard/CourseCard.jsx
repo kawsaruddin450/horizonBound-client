@@ -23,7 +23,7 @@ const CourseCard = ({ course }) => {
         const selectedItem = { courseId: _id, name, instructor, price, available_seats, image, category, email: user?.email, instructor_email };
 
         if (user) {
-            fetch(`http://localhost:5000/courses`, {
+            fetch(`http://localhost:5000/select`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
