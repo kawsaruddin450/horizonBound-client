@@ -1,15 +1,21 @@
 import { FaBookOpen, FaUsers, FaWallet } from "react-icons/fa";
 import { GiCheckedShield } from "react-icons/gi";
-import { IoMdHome, IoMdPeople } from "react-icons/io";
+import { IoMdAddCircle, IoMdHome, IoMdPeople } from "react-icons/io";
 import { IoCheckbox, IoSettingsSharp } from "react-icons/io5";
 import { RiMenu2Line } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
+import { MdFeedback, MdPersonPin } from "react-icons/md";
 
 
 const Dashboard = () => {
     const [admin] = useAdmin();
     const isAdmin = admin?.admin;
+
+    const [instructor] = useInstructor();
+    const isInstructor = instructor?.instructor;
+
     console.log(isAdmin);
     return (
         <div>
@@ -34,12 +40,19 @@ const Dashboard = () => {
                                     <li><NavLink to='/dashboard/managecourses'><IoSettingsSharp className="text-xl"></IoSettingsSharp> Manage Courses</NavLink></li>
                                     <li><NavLink to='/dashboard/manageusers'><FaUsers className="text-xl"></FaUsers> Manage Users</NavLink></li>
                                 </> :
-                                <>
-                                    <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> User Home</NavLink></li>
-                                    <li><NavLink to='/dashboard/myselection'><IoCheckbox className="text-xl"></IoCheckbox> My Selections</NavLink></li>
-                                    <li><NavLink to='/dashboard/enrolled'><GiCheckedShield className="text-xl"></GiCheckedShield> Enrolled Courses</NavLink></li>
-                                    <li><NavLink to='/dashboard/payments'><FaWallet className="text-xl"></FaWallet> Payment History</NavLink></li>
-                                </>
+                                isInstructor ?
+                                    <>
+                                        <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> Instructor Home</NavLink></li>
+                                        <li><NavLink to='/dashboard/myselection'><MdPersonPin className="text-xl"></MdPersonPin> My Courses</NavLink></li>
+                                        <li><NavLink to='/dashboard/enrolled'><IoMdAddCircle className="text-xl"></IoMdAddCircle> Add a Course</NavLink></li>
+                                        <li><NavLink to='/dashboard/payments'><MdFeedback className="text-xl"></MdFeedback> Feedbacks</NavLink></li>
+                                    </>
+                                    : <>
+                                        <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> User Home</NavLink></li>
+                                        <li><NavLink to='/dashboard/myselection'><IoCheckbox className="text-xl"></IoCheckbox> My Selections</NavLink></li>
+                                        <li><NavLink to='/dashboard/enrolled'><GiCheckedShield className="text-xl"></GiCheckedShield> Enrolled Courses</NavLink></li>
+                                        <li><NavLink to='/dashboard/payments'><FaWallet className="text-xl"></FaWallet> Payment History</NavLink></li>
+                                    </>
                         }
 
                         <div className="divider"></div>
