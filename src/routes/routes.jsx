@@ -13,6 +13,8 @@ import PrivateRoutes from "./PrivateRoutes";
 import ManageCourses from "../pages/Dashboard/ManageCourses/ManageCourses";
 import AdminRoutes from "./AdminRoutes";
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
+import InstructorRoutes from "./InstructorRoutes";
+import AddCourse from "../pages/Dashboard/AddCourse/AddCourse";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +51,7 @@ const router = createBrowserRouter([
           path: 'myselection',
           element: <MySelection></MySelection>
         },
+        //admin routes
         {
           path: 'managecourses',
           element: <AdminRoutes><ManageCourses></ManageCourses></AdminRoutes>
@@ -56,6 +59,11 @@ const router = createBrowserRouter([
         {
           path: 'manageusers',
           element: <AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
+        },
+        //instructor routes
+        {
+          path: 'addcourse',
+          element: <InstructorRoutes><AddCourse></AddCourse></InstructorRoutes>
         }
       ]
     }
