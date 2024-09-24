@@ -28,6 +28,37 @@ const ManageCourses = () => {
                 }
             })
     }
+    const deleteCourse = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/courses/${id}`, {
+                    method: "DELETE",
+                    headers: {
+                        authorization: `bearer ${token}`
+                    }
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount === 1) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "This course have been deleted.",
+                                icon: "success"
+                            });
+                            refetch();
+                        }
+                    })
+            }
+        });
+    }
 
     return (
         <div className="w-full m-12">
@@ -84,7 +115,7 @@ const ManageCourses = () => {
                                     ${course.price}
                                 </td>
                                 <td className={`${course.status === 'approved' ? 'text-success' :
-                                        course.status === 'denied' ? 'text-error' : 'text-base-content'}`}
+                                    course.status === 'denied' ? 'text-error' : 'text-base-content'}`}
                                 >
                                     {course.status}
                                 </td>
@@ -104,7 +135,8 @@ const ManageCourses = () => {
                                     <button className="btn btn-square btn-primary btn-xs text-xl"><GoComment></GoComment></button>
                                 </th>
                                 <td>
-                                    <button className="btn btn-sm text-sm text-white btn-error"><FaRegTrashAlt></FaRegTrashAlt></button>
+                                    <button onClick={() => deleteCourse(course._id)}
+                                        className="btn btn-sm text-sm text-white btn-error"><FaRegTrashAlt></FaRegTrashAlt></button>
                                 </td>
                             </tr>)
                         }
