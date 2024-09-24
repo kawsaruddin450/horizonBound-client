@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import useCourses from "../../../hooks/useCourses";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaRegTrashAlt } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 import { GoComment } from "react-icons/go";
 import Swal from "sweetalert2";
@@ -49,6 +49,7 @@ const ManageCourses = () => {
                             <th>Price</th>
                             <th>Status</th>
                             <th>Action</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,24 +83,29 @@ const ManageCourses = () => {
                                 <td>
                                     ${course.price}
                                 </td>
-                                <td>
+                                <td className={`${course.status === 'approved' ? 'text-success' :
+                                        course.status === 'denied' ? 'text-error' : 'text-base-content'}`}
+                                >
                                     {course.status}
                                 </td>
-                                <th className="space-x-2 space-y-2 items-center text-center">
+                                <th className="text-center flex flex-row items-center gap-1">
                                     <button
                                         disabled={course?.status === "approved" || course?.status === "denied"}
                                         onClick={() => handleStatus(course._id, "approved")}
-                                        className="btn btn-square btn-success btn-sm text-xl"
+                                        className="btn btn-square btn-success btn-xs text-xl"
                                     ><FaCheck></FaCheck></button>
 
                                     <button
                                         disabled={course?.status === "approved" || course?.status === "denied"}
                                         onClick={() => handleStatus(course._id, "denied")}
-                                        className="btn btn-square btn-error btn-sm text-xl"
+                                        className="btn btn-square btn-error btn-xs text-xl"
                                     ><TiDeleteOutline></TiDeleteOutline></button>
 
-                                    <button className="btn btn-square btn-primary btn-sm text-xl"><GoComment></GoComment></button>
+                                    <button className="btn btn-square btn-primary btn-xs text-xl"><GoComment></GoComment></button>
                                 </th>
+                                <td>
+                                    <button className="btn btn-sm text-sm text-white btn-error"><FaRegTrashAlt></FaRegTrashAlt></button>
+                                </td>
                             </tr>)
                         }
                     </tbody>
