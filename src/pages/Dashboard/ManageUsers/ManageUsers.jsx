@@ -37,6 +37,24 @@ const ManageUsers = () => {
                 }
             })
     }
+    const handleMakeInstructor = (id) => {
+        fetch(`http://localhost:5000/users/instructor/${id}`, {
+            method: "PATCH",
+            headers: {
+                authorization: `bearer ${token}`
+            }
+        }).then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount === 1) {
+                    Swal.fire({
+                        title: "Congratulations!",
+                        text: "This user is instructor now.",
+                        icon: "success"
+                    });
+                    refetch();
+                }
+            })
+    }
     return (
         <div className="w-full m-12">
             <Helmet>
@@ -89,8 +107,8 @@ const ManageUsers = () => {
                                     {user.role}
                                 </td>
                                 <td className="space-y-3 text-center items-center">
-                                    <button className="block btn btn-xs text-white btn-accent mx-auto">Make Instructor</button>
-                                    <button onClick={()=> handleMakeAdmin(user._id)} className="block btn btn-xs text-white btn-warning mx-auto">Make Admin</button>
+                                    <button onClick={()=> handleMakeInstructor(user._id)} disabled={user?.role === 'instructor'} className="block btn btn-xs text-white btn-accent mx-auto">Make Instructor</button>
+                                    <button disabled={user?.role === 'admin'} onClick={()=> handleMakeAdmin(user._id)} className="block btn btn-xs text-white btn-warning mx-auto">Make Admin</button>
                                 </td>
                                 <th>
                                     <button className="btn btn-sm text-md btn-error text-white"><FaRegTrashAlt></FaRegTrashAlt></button>
