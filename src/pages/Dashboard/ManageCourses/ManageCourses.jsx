@@ -1,11 +1,33 @@
 import { Helmet } from "react-helmet-async";
 import useCourses from "../../../hooks/useCourses";
-import { FaCheck, FaRegTrashAlt } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 import { GoComment } from "react-icons/go";
+import Swal from "sweetalert2";
 
 const ManageCourses = () => {
     const [courses, refetch] = useCourses();
+    const token = localStorage.getItem('access-token');
+
+    const handleStatus = (id, status) => {
+        fetch(`http://localhost:5000/courses/status/${id}?status=${status}`, {
+            method: "PATCH",
+            headers: {
+                authorization: `bearer ${token}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount === 1) {
+                    Swal.fire({
+                        title: `${status}!`,
+                        text: `This course is ${status}.`,
+                        icon: "success"
+                    });
+                    refetch();
+                }
+            })
+    }
 
     return (
         <div className="w-full m-12">
@@ -64,9 +86,19 @@ const ManageCourses = () => {
                                     {course.status}
                                 </td>
                                 <th className="space-x-2 space-y-2 items-center text-center">
-                                    <button className="btn btn-square btn-sm text-xl"><FaCheck></FaCheck></button>
-                                    <button className="btn btn-square btn-sm text-xl"><TiDeleteOutline></TiDeleteOutline></button>
-                                    <button className="btn btn-square btn-sm text-xl"><GoComment></GoComment></button>
+                                    <button
+                                        disabled={course?.status === "approved" || course?.status === "denied"}
+                                        onClick={() => handleStatus(course._id, "approved")}
+                                        className="btn btn-square btn-success btn-sm text-xl"
+                                    ><FaCheck></FaCheck></button>
+
+                                    <button
+                                        disabled={course?.status === "approved" || course?.status === "denied"}
+                                        onClick={() => handleStatus(course._id, "denied")}
+                                        className="btn btn-square btn-error btn-sm text-xl"
+                                    ><TiDeleteOutline></TiDeleteOutline></button>
+
+                                    <button className="btn btn-square btn-primary btn-sm text-xl"><GoComment></GoComment></button>
                                 </th>
                             </tr>)
                         }
