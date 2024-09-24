@@ -13,9 +13,10 @@ const InstructorCard = ({instructor}) => {
     },[])
     return (
         <div className="card card-side bg-base-100 shadow-xl">
-            <figure>
+            <figure className="basis-1/2">
                 <img
                     src={image}
+                    className="h-full"
                     alt="Instructor Photo" />
             </figure>
             <div className="card-body">

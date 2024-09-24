@@ -9,7 +9,8 @@ import useCourses from "../../../hooks/useCourses";
 const Courses = () => {
     const [tabIndex, setTabIndex] = useState(0);
     const [courses, ] = useCourses();
-    console.log(courses);
+
+    const approved = courses?.filter(course => course.status === "approved");
     // const [courses, setCourses] = useState([]);
     // useEffect(() => {
     //     fetch('http://localhost:5000/courses')
@@ -17,15 +18,15 @@ const Courses = () => {
     //         .then(data => setCourses(data))
     // }, [])
 
-    const hiking = courses.filter(item => item.category === 'hiking');
-    const kayaking = courses.filter(item => item.category === 'kayaking');
-    const orienteering = courses.filter(item => item.category === 'orienteering');
-    const camping = courses.filter(item => item.category === 'camping');
-    const cycling = courses.filter(item => item.category === 'cycling');
-    const waterSports = courses.filter(item => item.category === 'water_sports');
-    const natureExploration = courses.filter(item => item.category === 'nature_exploration');
-    const survivalSkills = courses.filter(item => item.category === 'survival_skills');
-    const rockClimbing = courses.filter(item => item.category === 'rock_climbing');
+    const hiking = approved.filter(item => item.category === 'hiking');
+    const kayaking = approved.filter(item => item.category === 'kayaking');
+    const orienteering = approved.filter(item => item.category === 'orienteering');
+    const camping = approved.filter(item => item.category === 'camping');
+    const cycling = approved.filter(item => item.category === 'cycling');
+    const waterSports = approved.filter(item => item.category === 'water_sports');
+    const natureExploration = approved.filter(item => item.category === 'nature_exploration');
+    const survivalSkills = approved.filter(item => item.category === 'survival_skills');
+    const rockClimbing = approved.filter(item => item.category === 'rock_climbing');
 
     return (
         <div className="lg:container mx-auto">
@@ -47,7 +48,7 @@ const Courses = () => {
                 </TabList>
                 {/* index 0: all */}
                 <TabPanel>
-                    <CourseTabs courses={courses}></CourseTabs>
+                    <CourseTabs courses={approved}></CourseTabs>
                 </TabPanel>
                 {/* index 1: hiking */}
                 <TabPanel>
