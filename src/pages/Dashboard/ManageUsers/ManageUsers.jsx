@@ -1,12 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { FaRegTrashAlt } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const ManageUsers = () => {
     const token = localStorage.getItem('access-token')
 
-    const { data: users } = useQuery({
+    const { data: users, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
             const response = await fetch(`http://localhost:5000/users`, {
@@ -17,7 +18,25 @@ const ManageUsers = () => {
             return response.json();
         }
     })
-    console.log(users);
+
+    const handleMakeAdmin = (id) => {
+        fetch(`http://localhost:5000/users/admin/${id}`, {
+            method: "PATCH",
+            headers: {
+                authorization: `bearer ${token}`
+            }
+        }).then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount === 1) {
+                    Swal.fire({
+                        title: "Congratulations!",
+                        text: "This user is admin now.",
+                        icon: "success"
+                    });
+                    refetch();
+                }
+            })
+    }
     return (
         <div className="w-full m-12">
             <Helmet>
@@ -46,7 +65,7 @@ const ManageUsers = () => {
                     <tbody>
                         {
                             users?.map((user, index) => <tr
-                            key={user._id}
+                                key={user._id}
                             >
                                 <th>
                                     {index + 1}
@@ -70,8 +89,8 @@ const ManageUsers = () => {
                                     {user.role}
                                 </td>
                                 <td className="space-y-3 text-center items-center">
-                                    <button className="block btn btn-xs text-white btn-accent mx-auto">Make Instructor</button>                                    
-                                    <button className="block btn btn-xs text-white btn-warning mx-auto">Make Admin</button>                                    
+                                    <button className="block btn btn-xs text-white btn-accent mx-auto">Make Instructor</button>
+                                    <button onClick={()=> handleMakeAdmin(user._id)} className="block btn btn-xs text-white btn-warning mx-auto">Make Admin</button>
                                 </td>
                                 <th>
                                     <button className="btn btn-sm text-md btn-error text-white"><FaRegTrashAlt></FaRegTrashAlt></button>
