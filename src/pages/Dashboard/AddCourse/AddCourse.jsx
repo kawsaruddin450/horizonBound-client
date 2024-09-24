@@ -20,6 +20,7 @@ const AddCourse = () => {
         const instructor = form.instructor.value;
         const instructorEmail = form.email.value;
         const status = "pending";
+        const students = 0;
 
         const course = {
             name,
@@ -28,6 +29,7 @@ const AddCourse = () => {
             price,
             description,
             status,
+            students,
             instructor,
             instructor_email: instructorEmail,
             available_seats: availableSeats,
