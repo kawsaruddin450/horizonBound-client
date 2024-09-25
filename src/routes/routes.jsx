@@ -17,6 +17,7 @@ import InstructorRoutes from "./InstructorRoutes";
 import AddCourse from "../pages/Dashboard/AddCourse/AddCourse";
 import MyCourses from "../pages/Dashboard/MyCourses/MyCourses";
 import SendFeedback from "../pages/Dashboard/SendFeedback/SendFeedback";
+import Feedbacks from "../pages/Dashboard/Feedbacks/Feedbacks";
 
 const router = createBrowserRouter([
     {
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
         {
           path: 'mycourses',
           element: <InstructorRoutes><MyCourses></MyCourses></InstructorRoutes>
+        },
+        {
+          path: 'feedbacks',
+          element: <InstructorRoutes><Feedbacks></Feedbacks></InstructorRoutes>
         }
       ]
     }

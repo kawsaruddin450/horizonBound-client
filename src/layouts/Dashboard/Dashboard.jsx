@@ -45,7 +45,7 @@ const Dashboard = () => {
                                         <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> Instructor Home</NavLink></li>
                                         <li><NavLink to='/dashboard/mycourses'><MdPersonPin className="text-xl"></MdPersonPin> My Courses</NavLink></li>
                                         <li><NavLink to='/dashboard/addcourse'><IoMdAddCircle className="text-xl"></IoMdAddCircle> Add a Course</NavLink></li>
-                                        <li><NavLink to='/dashboard/payments'><MdFeedback className="text-xl"></MdFeedback> Feedbacks</NavLink></li>
+                                        <li><NavLink to='/dashboard/feedbacks'><MdFeedback className="text-xl"></MdFeedback> Feedbacks</NavLink></li>
                                     </>
                                     : <>
                                         <li><NavLink to='/dashboard/home'><IoMdHome className="text-xl"></IoMdHome> User Home</NavLink></li>
