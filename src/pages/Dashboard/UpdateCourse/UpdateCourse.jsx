@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateCourse = () => {
     const { id } = useParams();
+    const token = localStorage.getItem('access-token');
+    const navigate = useNavigate();
     const [course, setCourse] = useState({});
     useEffect(() => {
         fetch(`http://localhost:5000/courses/${id}`)
@@ -31,32 +34,33 @@ const UpdateCourse = () => {
         }
         console.log(updated);
 
-        // fetch(`http://localhost:5000/courses`, {
-        //     method: "POST",
-        //     headers: {
-        //         authorization: `bearer ${token}`,
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(course)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: "Congratulations!",
-        //                 text: "This course have been added successfully.",
-        //                 icon: "success"
-        //             });
-        //             form.reset();
-        //         }
-        //         else {
-        //             Swal.fire({
-        //                 title: "Sorry!",
-        //                 text: "Something went wrong, please try again later.",
-        //                 icon: "error"
-        //             });
-        //         }
-        //     })
+        fetch(`http://localhost:5000/courses/${id}`, {
+            method: "PATCH",
+            headers: {
+                authorization: `bearer ${token}`,
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updated)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount === 1) {
+                    Swal.fire({
+                        title: "Congratulations!",
+                        text: "This course have been added successfully.",
+                        icon: "success"
+                    });
+                    form.reset();
+                    navigate('/dashboard/mycourses/')
+                }
+                else {
+                    Swal.fire({
+                        title: "Sorry!",
+                        text: "Something went wrong, please try again later.",
+                        icon: "error"
+                    });
+                }
+            })
     }
 
     return (
