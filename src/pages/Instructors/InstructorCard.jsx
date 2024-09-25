@@ -10,7 +10,7 @@ const InstructorCard = ({instructor}) => {
         fetch(`http://localhost:5000/coursesby?email=${email}`)
         .then(res => res.json())
         .then(data => setCourses(data))
-    },[])
+    },[email])
     return (
         <div className="card card-side bg-base-100 shadow-xl">
             <figure className="basis-1/2">

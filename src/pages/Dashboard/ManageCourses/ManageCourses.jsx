@@ -4,6 +4,7 @@ import { FaCheck, FaRegTrashAlt } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 import { GoComment } from "react-icons/go";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ManageCourses = () => {
     const [courses, refetch] = useCourses();
@@ -28,6 +29,7 @@ const ManageCourses = () => {
                 }
             })
     }
+
     const deleteCourse = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -132,7 +134,10 @@ const ManageCourses = () => {
                                         className="btn btn-square btn-error btn-xs text-xl"
                                     ><TiDeleteOutline></TiDeleteOutline></button>
 
-                                    <button className="btn btn-square btn-primary btn-xs text-xl"><GoComment></GoComment></button>
+                                    <Link
+                                        to={`/dashboard/sendfeedback/${course._id}`}
+                                        className="btn btn-square btn-primary btn-xs text-xl"
+                                    ><GoComment></GoComment></Link>
                                 </th>
                                 <td>
                                     <button onClick={() => deleteCourse(course._id)}

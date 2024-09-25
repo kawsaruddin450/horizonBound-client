@@ -16,6 +16,7 @@ import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 import InstructorRoutes from "./InstructorRoutes";
 import AddCourse from "../pages/Dashboard/AddCourse/AddCourse";
 import MyCourses from "../pages/Dashboard/MyCourses/MyCourses";
+import SendFeedback from "../pages/Dashboard/SendFeedback/SendFeedback";
 
 const router = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
         {
           path: 'manageusers',
           element: <AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
+        },
+        {
+          path: 'sendfeedback/:id',
+          element: <AdminRoutes><SendFeedback></SendFeedback></AdminRoutes>
         },
         //instructor routes
         {
