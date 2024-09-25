@@ -4,6 +4,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyCourses = () => {
@@ -101,7 +102,7 @@ const MyCourses = () => {
                                     {course.status}
                                 </td>
                                 <th className="space-x-2 space-y-2 items-center text-center">
-                                    <button className="btn btn-square btn-accent btn-sm text-md text-white"><FaEdit></FaEdit></button>
+                                        <Link to={`/dashboard/updatecourse/${course._id}`} className="btn btn-square btn-accent btn-sm text-md text-white"><FaEdit></FaEdit></Link>
                                     <button onClick={()=> deleteCourse(course._id)} className="btn btn-square btn-error btn-sm text-md text-white"><FaRegTrashAlt></FaRegTrashAlt></button>
                                 </th>
                             </tr>)
