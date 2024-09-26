@@ -19,6 +19,7 @@ import MyCourses from "../pages/Dashboard/MyCourses/MyCourses";
 import SendFeedback from "../pages/Dashboard/SendFeedback/SendFeedback";
 import Feedbacks from "../pages/Dashboard/Feedbacks/Feedbacks";
 import UpdateCourse from "../pages/Dashboard/UpdateCourse/UpdateCourse";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
         {
           path: 'myselection',
           element: <MySelection></MySelection>
+        },
+        {
+          path: 'pay',
+          element: <Payment></Payment>
         },
         //admin routes
         {

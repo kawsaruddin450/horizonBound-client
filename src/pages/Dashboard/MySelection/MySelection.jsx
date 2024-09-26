@@ -2,6 +2,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import useSelected from "../../../hooks/useSelected";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 
 const MySelection = () => {
@@ -37,7 +38,7 @@ const MySelection = () => {
             <div className="flex items-center justify-evenly text-2xl font-semibold">
                 <h2>Selected Courses: {selectedCourses.length}</h2>
                 <h2>Total Price: ${total}</h2>
-                <button className="btn btn-primary text-white">Enroll Now</button>
+                <Link to='/dashboard/pay' className="btn btn-primary text-white">Enroll Now</Link>
             </div>
             <div className="overflow-x-auto m-12">
                 <table className="table">
