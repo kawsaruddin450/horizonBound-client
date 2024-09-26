@@ -14,7 +14,7 @@ const Payment = () => {
         <div className="w-full mx-12">
             <h1 className="text-center font-semibold text-3xl my-12">Total Amount to Pay: ${total}</h1>
             <Elements stripe={stripePromise}>
-                <CheckoutForm price={totalPrice}></CheckoutForm>
+                <CheckoutForm selectedCourses={selectedCourses} price={totalPrice}></CheckoutForm>
             </Elements>
         </div>
     );

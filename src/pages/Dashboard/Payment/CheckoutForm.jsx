@@ -1,9 +1,10 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
-const CheckoutForm = ({ price }) => {
+const CheckoutForm = ({ selectedCourses, price }) => {
     const { user } = useContext(AuthContext);
     const stripe = useStripe();
     const elements = useElements();
@@ -64,9 +65,38 @@ const CheckoutForm = ({ price }) => {
             setCardError(confirmError);
         }
         console.log(paymentIntent);
-        if(paymentIntent.status === 'succeeded'){
+        if (paymentIntent.status === 'succeeded') {
             const trxId = paymentIntent.id;
             setTransactionId(trxId);
+
+            //save payment info to server
+            const payment = {
+                user: user?.email,
+                transactionId: paymentIntent.id,
+                amount: price,
+                quantity: selectedCourses.length,
+                items: selectedCourses.map(item => item._id),
+                courses: selectedCourses,
+            }
+
+            fetch(`http://localhost:5000/payments`, {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                    authorization: `bearer ${token}`,
+                },
+                body: JSON.stringify(payment),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedResult.insertedId || data.deletedResult.deletedCount > 0) {
+                        Swal.fire({
+                            title: "Enrolled!",
+                            text: "The payment is successful.",
+                            icon: "success"
+                        });
+                    }
+                })
         }
     }
 
@@ -91,7 +121,7 @@ const CheckoutForm = ({ price }) => {
             <button className="btn btn-primary mt-5" type="submit" disabled={!stripe}>
                 Pay
             </button>
-            { cardError && <p className="text-error">{cardError}</p>}
+            {cardError && <p className="text-error">{cardError}</p>}
             {transactionId && <p className="text-success my-12 font-medium">Transaction Successful, TrxId: {transactionId}</p>}
         </form>
     );
